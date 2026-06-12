@@ -5,10 +5,12 @@ generator = pipeline(
     model="gpt2"
 )
 
+prompt = "Artificial Intelligence is"
+
 result = generator(
-    "Artificial Intelligence is",
-    max_new_tokens=50,
+    prompt,
+    max_length=100,
     num_return_sequences=1
 )
 
-print(result[0]["generated_text"])
+print(result[0]['generated_text'])
